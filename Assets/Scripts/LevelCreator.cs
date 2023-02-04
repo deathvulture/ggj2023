@@ -34,7 +34,7 @@ public class LevelCreator : MonoBehaviour
     {
         MoveBackgrounds();
         ManageBackgrounds();
-        ManageTraps();
+        //ManageTraps();
     }
 
     GameObject GetNextBackground()
