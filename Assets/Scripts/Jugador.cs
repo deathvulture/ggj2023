@@ -11,8 +11,8 @@ public class Jugador : MonoBehaviour
     public BoxCollider2D col;
     public CapsuleCollider2D col2;
     private Keyboard controlls;
-    public bool dobleJump = false;
     private bool onFloor = false;
+    private Animator anim;
     
 
     void Start()
@@ -21,6 +21,7 @@ public class Jugador : MonoBehaviour
         col.GetComponent<BoxCollider2D>();
         col2.GetComponent<CapsuleCollider2D>();
         controlls = Keyboard.current;
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -49,7 +50,6 @@ public class Jugador : MonoBehaviour
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log("pepe");
         if(collision.gameObject.tag == "Suelo")
         {
             Jump();
@@ -61,10 +61,14 @@ public class Jugador : MonoBehaviour
     {
         if(controlls.spaceKey.isPressed)
         {
+            anim.SetBool("estaSaltando", true);
             rigid2D.AddForce(new Vector2(0, fuerzaSalto));
             onFloor = false;
         }
-        
+        else
+        {
+            anim.SetBool("estaSaltando", false);
+        }
     }
 
     void Slide()
