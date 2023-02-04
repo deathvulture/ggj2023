@@ -75,10 +75,12 @@ public class Jugador : MonoBehaviour
     {
         if(controlls.shiftKey.isPressed)
             {
+                anim.SetBool("estaDeslizandose", true);
                 col2.enabled = true;
                 col.enabled = false;
             }
             else{
+                anim.SetBool("estaDeslizandose", false);
                 col2.enabled = false;
                 col.enabled = true;
             }
