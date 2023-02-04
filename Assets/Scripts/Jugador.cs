@@ -12,11 +12,16 @@ public class Jugador : MonoBehaviour
     public CapsuleCollider2D col2;
     private Keyboard controlls;
     private bool onFloor = false;
+    public bool isDead = false;
     private Animator anim;
-    
+    private bool pauseActive;
+    public static float barraMagia = 255f;
+    public GameObject deadMenu;
 
     void Start()
     {
+        barraMagia = 255f;
+        isDead = false;
         rigid2D = GetComponent<Rigidbody2D>();
         col.GetComponent<BoxCollider2D>();
         col2.GetComponent<CapsuleCollider2D>();
@@ -85,4 +90,34 @@ public class Jugador : MonoBehaviour
                 col.enabled = true;
             }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Trampa")
+        {
+            MuerteJugador();
+        }
+
+        if(col.gameObject.tag == "Magia")
+        {
+            barraMagia = -5f;
+        }
+    }
+    void MuerteJugador()
+    {
+        if(!isDead)
+        {
+            isDead = true;
+            anim.SetBool("estaMuerto", true);
+            deadMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            isDead = false;
+            Time.timeScale = 1;
+            deadMenu.SetActive(false);
+            anim.SetBool("estaMuerto", false);
+        }
+    }  
 }
