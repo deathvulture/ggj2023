@@ -64,6 +64,7 @@ public class Jugador : MonoBehaviour
 
     void Jump()
     {
+        Debug.Log(controlls);
         if(controlls.spaceKey.isPressed)
         {
             anim.SetBool("estaSaltando", true);

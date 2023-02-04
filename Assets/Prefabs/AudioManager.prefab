@@ -56,9 +56,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BG1
     clip: {fileID: 8300000, guid: 2c48ba2b26992fa43b04a1e1d39dd59f, type: 3}
-    volume: 0
+    volume: 0.512
     source: {fileID: 0}
   - name: BG2
     clip: {fileID: 8300000, guid: baede70a07a8bcf498576d1eb4febcf3, type: 3}
-    volume: 0
+    volume: 0.531
     source: {fileID: 0}
