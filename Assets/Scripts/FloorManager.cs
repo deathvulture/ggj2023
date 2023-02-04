@@ -77,7 +77,7 @@ public class FloorManager : MonoBehaviour
             int randomIndex = lastIndex;
             if (GameManager.instance.trapSpawned)
             {
-                coolDown = 3;
+                coolDown = 2;
             }
 
             while (randomIndex == lastIndex)
