@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public float gameSpeed = 1;
+    public bool trapSpawned = false;
+    public float timeBeforNextSpawn = 3000f;
+
     void Awake()
     {
         if ( instance == null )
