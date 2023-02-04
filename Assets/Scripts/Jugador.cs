@@ -7,11 +7,12 @@ using UnityEngine.InputSystem;
 public class Jugador : MonoBehaviour
 {
     public float fuerzaSalto;
-    public float tiempoDeslizando;
     private Rigidbody2D rigid2D;
     public BoxCollider2D col;
     public CapsuleCollider2D col2;
     private Keyboard controlls;
+    public bool dobleJump = false;
+    private bool onFloor = false;
     
 
     void Start()
@@ -22,17 +23,42 @@ public class Jugador : MonoBehaviour
         controlls = Keyboard.current;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        if(onFloor)
+        {
+            Jump();
+            Slide();
+        }
+        if(!onFloor && !dobleJump)
+        {
+            Jump();
+        }
+
+    }
+
+    void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Suelo")
+        {
+            onFloor = true;
+            rigid2D.velocity = new Vector2(rigid2D.velocity.x, 0);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Suelo")
+            onFloor = false;
     }
 
     public void OnCollisionStay2D(Collision2D collision)
     {
+        Debug.Log("pepe");
         if(collision.gameObject.tag == "Suelo")
         {
-        Jump();
-        Slide();        
+            Jump();
+            Slide(); 
         }
     }
 
@@ -40,7 +66,13 @@ public class Jugador : MonoBehaviour
     {
         if(controlls.spaceKey.isPressed)
         {
-        rigid2D.AddForce(new Vector2(0, fuerzaSalto)); 
+            rigid2D.AddForce(new Vector2(0, fuerzaSalto));
+            onFloor = false;
+        }
+        if(!dobleJump && !onFloor)
+        {
+            dobleJump = true;
+            rigid2D.AddForce(new Vector2(0, fuerzaSalto/2));
         }
     }
 
@@ -50,7 +82,6 @@ public class Jugador : MonoBehaviour
             {
                 col2.enabled = true;
                 col.enabled = false;
-                Debug.Log("estas aprentando Shift");
             }
             else{
                 col2.enabled = false;
