@@ -62,7 +62,6 @@ public class FloorManager : MonoBehaviour
 
     GameObject SpawnFloor(string floorType)
     {
-        Debug.Log(floorType);
         GameObject nextTrap = floorPoolDict[floorType].Dequeue();
         nextTrap.SetActive(true);
         nextTrap.transform.position = new Vector3(20, nextTrap.transform.position.y, 0);
