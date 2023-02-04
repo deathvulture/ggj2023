@@ -30,11 +30,6 @@ public class Jugador : MonoBehaviour
             Jump();
             Slide();
         }
-        if(!onFloor && !dobleJump)
-        {
-            Jump();
-        }
-
     }
 
     void OnCollisionEnter2D(Collision2D other) 
@@ -69,11 +64,7 @@ public class Jugador : MonoBehaviour
             rigid2D.AddForce(new Vector2(0, fuerzaSalto));
             onFloor = false;
         }
-        if(!dobleJump && !onFloor)
-        {
-            dobleJump = true;
-            rigid2D.AddForce(new Vector2(0, fuerzaSalto/2));
-        }
+        
     }
 
     void Slide()
