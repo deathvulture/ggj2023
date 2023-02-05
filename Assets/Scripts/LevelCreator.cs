@@ -11,6 +11,10 @@ public class LevelCreator : MonoBehaviour
     public GameObject lastBG;
     public GameObject currentBG;
     public GameObject nextBg;
+    public GameObject fueguito;
+    public float fueguitoCD = 10000;
+    public float timeToSpawnFuego;
+  
 
 
     private const float offSet = 20.48f;
@@ -27,15 +31,18 @@ public class LevelCreator : MonoBehaviour
         currentBG.transform.position = new Vector3(0, -0.1f, 0);
         nextBg.transform.position = new Vector3(offSet, -0.1f, 0);
         lastBG = new GameObject();
- 
-    }
+        timeToSpawnFuego = fueguitoCD;
+
+}
 
     // Update is called once per frame
     void Update()
     {
         MoveBackgrounds();
         ManageBackgrounds();
-        //ManageTraps();
+        ManageFueguito();
+        gm.gameSpeed += Time.deltaTime * 0.01f;
+        
     }
 
     GameObject GetNextBackground()
@@ -61,6 +68,16 @@ public class LevelCreator : MonoBehaviour
             nextBg = GetNextBackground();
             nextBg.transform.position = new Vector3(currentBG.transform.position.x + offSet, -0.1f, 0);
         }            
+    }
+
+    void ManageFueguito()
+    {
+        timeToSpawnFuego -= Time.deltaTime * 1000;
+        if (timeToSpawnFuego <= 0)
+        {
+            timeToSpawnFuego = fueguitoCD;
+            GameObject nuevoFuego = GameObject.Instantiate(fueguito);
+        }
     }
 
 }
