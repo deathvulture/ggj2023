@@ -57,7 +57,7 @@ public class Jugador : MonoBehaviour
 
     void Jump()
     {
-        if(controlls.spaceKey.isPressed && !controlls.shiftKey.isPressed)
+        if(controlls.upArrowKey.isPressed && !controlls.downArrowKey.isPressed)
         {
             anim.SetBool("estaSaltando", true);
             rigid2D.AddForce(new Vector2(0, fuerzaSalto));
@@ -71,7 +71,7 @@ public class Jugador : MonoBehaviour
 
     void Slide()
     {
-        if(controlls.shiftKey.isPressed && !controlls.spaceKey.isPressed && tiempoDeslizado > 0)
+        if(controlls.downArrowKey.isPressed && !controlls.upArrowKey.isPressed && tiempoDeslizado > 0)
             {
                 tiempoDeslizado -= Time.deltaTime * 1000;
                 anim.SetBool("estaDeslizandose", true);
@@ -103,6 +103,10 @@ public class Jugador : MonoBehaviour
         if(col.gameObject.tag == "Trampa")
         {
             MuerteJugador();
+        }else
+        {
+            isDead = false;
+            deadMenu.SetActive(false);
         }
         Debug.Log(col.gameObject.tag);
         if(col.gameObject.tag == "Magia")
@@ -117,11 +121,6 @@ public class Jugador : MonoBehaviour
         {
             isDead = true;
             deadMenu.SetActive(true); 
-        }
-        else
-        {
-            isDead = false;
-            deadMenu.SetActive(false);
         }
     }  
 }
