@@ -14,13 +14,25 @@ public class UIMenu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        AudioManager.instance.Stop("GameOver");
+        AudioManager.instance.Stop("BG1");
+        AudioManager.instance.Stop("BG2");
+        AudioManager.instance.bgmEnabled = false;
+        AudioManager.instance.Play("MainMenu");
     }
    
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        AudioManager.instance.Stop("GameOver");
+        SceneManager.LoadScene("StoryBoard");
     }
-  
+
+    public void Replay()
+    {
+        AudioManager.instance.Stop("GameOver");
+        SceneManager.LoadScene("Juego");
+    }
+
     public void ResumeGame()
     {
         SceneManager.LoadScene(2);

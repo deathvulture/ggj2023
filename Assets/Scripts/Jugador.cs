@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 
@@ -96,11 +97,8 @@ public class Jugador : MonoBehaviour
         if(col.gameObject.tag == "Trampa")
         {
             MuerteJugador();
-        }else
-        {
-            isDead = false;
-            deadMenu.SetActive(false);
         }
+
         Debug.Log(col.gameObject.tag);
         if(col.gameObject.tag == "Magia")
         {
@@ -110,10 +108,10 @@ public class Jugador : MonoBehaviour
     }
     void MuerteJugador()
     {
-        if(!isDead)
-        {
-            isDead = true;
-            deadMenu.SetActive(true); 
-        }
+        AudioManager.instance.Stop("BG1");
+        AudioManager.instance.Stop("BG2");
+        AudioManager.instance.bgmEnabled = false;
+        AudioManager.instance.Play("GameOver");
+        SceneManager.LoadScene("GameOver");
     }  
 }

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public float originalGameSpeed = 4;
     public float gameSpeed = 1;
     public float speedMultiplier = 0.01f;
     public bool trapSpawned = false;

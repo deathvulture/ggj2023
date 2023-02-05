@@ -12,6 +12,7 @@ public class StoryManager : MonoBehaviour
     void Start()
     {
         timer = timeBetweenImages;
+        AudioManager.instance.Stop("MainMenu");
         AudioManager.instance.Play("StoryBoard");
     }
 

@@ -32,6 +32,8 @@ public class LevelCreator : MonoBehaviour
         nextBg.transform.position = new Vector3(offSet, -0.1f, 0);
         lastBG = new GameObject();
         timeToSpawnFuego = fueguitoCD;
+        gm.limpieza = 0;
+        gm.gameSpeed = gm.originalGameSpeed;
 
 }
 
