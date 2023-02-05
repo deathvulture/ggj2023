@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -22,10 +23,6 @@ public class UI : MonoBehaviour
 
     public void BarraTotal()
     {
-        barraActual = Jugador.barraMagia;
-        if(Time.timeScale != 0)
-        {
-           barraColeccionable.fillAmount = barraActual / barraMaxima;
-        }
+        barraColeccionable.fillAmount = GameManager.instance.limpieza;
     }
 }
