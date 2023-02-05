@@ -74,3 +74,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b42231b70eb381a48ad6e2c082cd9636, type: 3}
     volume: 0.373
     source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 3551fd727739117489e146a6acefec1f, type: 3}
+    volume: 0.585
+    source: {fileID: 0}
+  - name: Slide
+    clip: {fileID: 8300000, guid: 431a2f30690ad26489fb45033e932b0d, type: 3}
+    volume: 0.578
+    source: {fileID: 0}
