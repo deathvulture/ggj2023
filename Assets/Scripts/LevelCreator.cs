@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class LevelCreator : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class LevelCreator : MonoBehaviour
     public GameObject fueguito;
     public float fueguitoCD = 10000;
     public float timeToSpawnFuego;
-  
+    public GameObject luzObject;
+    private Light2D luz;
 
 
     private const float offSet = 20.48f;
@@ -34,6 +36,7 @@ public class LevelCreator : MonoBehaviour
         timeToSpawnFuego = fueguitoCD;
         gm.limpieza = 0.05f;
         gm.gameSpeed = gm.originalGameSpeed;
+        luz = luzObject.GetComponent<Light2D>();
 
 }
 
@@ -44,6 +47,8 @@ public class LevelCreator : MonoBehaviour
         ManageBackgrounds();
         ManageFueguito();
         gm.gameSpeed += Time.deltaTime * 0.01f;
+        luz.intensity = Mathf.Clamp(gm.limpieza + 0.2f, 0.2f, 1f);
+
         
     }
 

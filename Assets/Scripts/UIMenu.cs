@@ -15,6 +15,7 @@ public class UIMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         AudioManager.instance.Stop("GameOver");
+        AudioManager.instance.Stop("Victory");
         AudioManager.instance.Stop("BG1");
         AudioManager.instance.Stop("BG2");
         AudioManager.instance.bgmEnabled = false;

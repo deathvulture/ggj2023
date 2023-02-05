@@ -1770,8 +1770,9 @@ MonoBehaviour:
   currentBG: {fileID: 0}
   nextBg: {fileID: 0}
   fueguito: {fileID: 3789023817508188860, guid: 2c714631923188846884c69344780512, type: 3}
-  fueguitoCD: 10000
+  fueguitoCD: 8000
   timeToSpawnFuego: 0
+  luzObject: {fileID: 366121717}
 --- !u!4 &917678093
 Transform:
   m_ObjectHideFlags: 0
@@ -2717,8 +2718,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3}
-  m_Size: {x: 1.0000002, y: 0.35}
+  m_Offset: {x: 0.02275559, y: -0.30632097}
+  m_Size: {x: 0.7269459, y: 0.33735853}
   m_Direction: 1
 --- !u!61 &1368285223
 BoxCollider2D:
@@ -2733,7 +2734,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0073120594, y: -0.021936432}
+  m_Offset: {x: -0.014896899, y: -0.039634734}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2744,7 +2745,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38578063, y: 0.95612717}
+  m_Size: {x: 0.28970432, y: 0.92073053}
   m_EdgeRadius: 0
 --- !u!50 &1368285224
 Rigidbody2D:

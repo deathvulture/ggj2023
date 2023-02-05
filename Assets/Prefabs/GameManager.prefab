@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d957c1036fca4048aa8a6569f00e123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalGameSpeed: 4
   gameSpeed: 4
-  speedMultiplier: 0.02
+  speedMultiplier: 0.05
   trapSpawned: 0
   timeBeforNextSpawn: 5000
   limpieza: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Victory : MonoBehaviour
 {
-    public float timer = 4000;
+    public float timer = 5000;
     public GameObject imagen;
     public GameObject texto;
     // Start is called before the first frame update

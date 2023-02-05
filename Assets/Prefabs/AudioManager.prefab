@@ -48,31 +48,31 @@ MonoBehaviour:
   sounds:
   - name: Story
     clip: {fileID: 8300000, guid: 5ae91485ac55ef44ba554c006a183517, type: 3}
-    volume: 0.253
+    volume: 0.3
     source: {fileID: 0}
   - name: Menu
     clip: {fileID: 8300000, guid: 67d971a878664d246ac64eacd4133f4c, type: 3}
-    volume: 0.273
+    volume: 0.3
     source: {fileID: 0}
   - name: BG1
     clip: {fileID: 8300000, guid: 2c48ba2b26992fa43b04a1e1d39dd59f, type: 3}
-    volume: 0.305
+    volume: 0.3
     source: {fileID: 0}
   - name: BG2
     clip: {fileID: 8300000, guid: baede70a07a8bcf498576d1eb4febcf3, type: 3}
-    volume: 0.334
+    volume: 0.3
     source: {fileID: 0}
   - name: StoryBoard
     clip: {fileID: 8300000, guid: 5ae91485ac55ef44ba554c006a183517, type: 3}
-    volume: 0.323
+    volume: 0.3
     source: {fileID: 0}
   - name: MainMenu
     clip: {fileID: 8300000, guid: 67d971a878664d246ac64eacd4133f4c, type: 3}
-    volume: 0.373
+    volume: 0.3
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: b42231b70eb381a48ad6e2c082cd9636, type: 3}
-    volume: 0.373
+    volume: 0.3
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 3551fd727739117489e146a6acefec1f, type: 3}
@@ -81,4 +81,8 @@ MonoBehaviour:
   - name: Slide
     clip: {fileID: 8300000, guid: 431a2f30690ad26489fb45033e932b0d, type: 3}
     volume: 0.578
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 8b1f92db878c32f48bd2446d7b32e6ac, type: 3}
+    volume: 0.3
     source: {fileID: 0}
