@@ -56,6 +56,7 @@ public class Jugador : MonoBehaviour
             anim.SetBool("estaSaltando", true);
             rigid2D.AddForce(new Vector2(0, fuerzaSalto));
             onFloor = false;
+            AudioManager.instance.Play("Jump");
         }
         else
         {
@@ -71,6 +72,7 @@ public class Jugador : MonoBehaviour
                 anim.SetBool("estaDeslizandose", true);
                 col2.enabled = true;
                 col.enabled = false;
+                AudioManager.instance.Play("Slide");
             }
             else{
                 anim.SetBool("estaDeslizandose", false);
