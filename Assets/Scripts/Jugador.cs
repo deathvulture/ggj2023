@@ -15,7 +15,7 @@ public class Jugador : MonoBehaviour
     public bool isDead = false;
     private Animator anim;
     private bool pauseActive;
-    public float barraMagia = 0f;
+    public static float barraMagia = 0f;
     public GameObject deadMenu;
 
     void Start()
