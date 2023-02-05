@@ -15,7 +15,7 @@ public class Jugador : MonoBehaviour
     public bool isDead = false;
     private Animator anim;
     private bool pauseActive;
-    public static float barraMagia = 255f;
+    public float barraMagia = 0f;
     public GameObject deadMenu;
 
     void Start()
@@ -101,7 +101,7 @@ public class Jugador : MonoBehaviour
 
         if(col.gameObject.tag == "Magia")
         {
-            barraMagia = -5f;
+            barraMagia = 5f;
         }
     }
     void MuerteJugador()
