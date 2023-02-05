@@ -41,17 +41,11 @@ public class Jugador : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Suelo")
+        if(other.gameObject.tag == "Suelo" && !onFloor)
         {
             onFloor = true;
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, 0);
         }
-    }
-
-    void OnCollisionExit2D(Collision2D other) 
-    {
-        if(other.gameObject.tag == "Suelo")
-            onFloor = false;
     }
 
     void Jump()
@@ -86,13 +80,13 @@ public class Jugador : MonoBehaviour
                     cooldown -= Time.deltaTime * 1000;
                     if(cooldown <= 0)
                     {
-                        tiempoDeslizado = 500f;
-                        cooldown = 200f;
+                        tiempoDeslizado = 1000f;
+                        cooldown = 400f;
                     }
                 }
                 else{
-                    tiempoDeslizado = 500f;
-                    cooldown = 200f;
+                    tiempoDeslizado = 1000f;
+                    cooldown = 400f;
                 }
             }
     }
