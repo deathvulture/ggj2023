@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public float gameSpeed = 1;
     public bool trapSpawned = false;
     public float timeBeforNextSpawn = 3000f;
+    public int limpieza = 0;
 
     void Awake()
     {
