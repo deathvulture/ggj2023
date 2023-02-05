@@ -45,5 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 4
+  speedMultiplier: 0.02
   trapSpawned: 0
   timeBeforNextSpawn: 5000
+  limpieza: 0

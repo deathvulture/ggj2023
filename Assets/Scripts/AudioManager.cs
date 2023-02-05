@@ -56,6 +56,7 @@ public class AudioManager : MonoBehaviour
     public void PlayLevelMusic()
     {
         bgmEnabled = true;
+        Array.Find(sounds, sound => sound.name == "StoryBoard").source.Stop();
     }
 
     private void Update()
@@ -81,5 +82,4 @@ public class AudioManager : MonoBehaviour
             return;
         }
     }
-    
 }
