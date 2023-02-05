@@ -104,6 +104,8 @@ public class Jugador : MonoBehaviour
         {
             GameManager.instance.limpieza += 0.05f;
             Destroy(col.gameObject);
+            if (GameManager.instance.limpieza >= 1)
+                Victoria();
         }
     }
     void MuerteJugador()
@@ -114,4 +116,13 @@ public class Jugador : MonoBehaviour
         AudioManager.instance.Play("GameOver");
         SceneManager.LoadScene("GameOver");
     }  
+
+    void Victoria()
+    {
+        AudioManager.instance.Stop("BG1");
+        AudioManager.instance.Stop("BG2");
+        AudioManager.instance.bgmEnabled = false;
+        AudioManager.instance.Play("Victory");
+        SceneManager.LoadScene("Victory");
+    }
 }

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public float speedMultiplier = 0.01f;
     public bool trapSpawned = false;
     public float timeBeforNextSpawn = 3000f;
-    public float limpieza = 0f;
+    public float limpieza = 0.05f;
 
     void Awake()
     {
@@ -22,6 +22,4 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
     }
-
-
 }
